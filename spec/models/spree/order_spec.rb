@@ -36,6 +36,13 @@ RSpec.describe Spree::Order do
         order.next
       end.to change { Spree::BookkeepingDocument.count }
     end
+
+    it 'prevents #invoice_for_order from creating too many documents' do
+      order.next
+      expect do
+        order.invoice_for_order
+      end.to_not change { Spree::BookkeepingDocument.count }
+    end
   end
 
   describe 'deprecated methods' do

@@ -37,7 +37,12 @@ Spree::Order.class_eval do
   end
 
   def invoice_for_order
-    bookkeeping_documents.create(template: 'invoice')
-    bookkeeping_documents.create(template: 'packaging_slip')
+    # Under some conditions this method could be called more than once.
+    # We have to make sure that an invoice/packaging slip is never created more
+    # than once for an order.
+    ActiveRecord::Base.transaction do
+      create_invoice unless invoice.present?
+      create_packaging_slip unless packaging_slip.present?
+    end
   end
 end
