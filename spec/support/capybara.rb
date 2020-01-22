@@ -4,6 +4,7 @@ require 'capybara/poltergeist'
 
 RSpec.configure do
   Capybara.javascript_driver = :poltergeist
+  Capybara.server = :puma
 
   Capybara.register_driver(:poltergeist) do |app|
     Capybara::Poltergeist::Driver.new app, js_errors: true, timeout: 90
