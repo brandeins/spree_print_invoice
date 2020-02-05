@@ -1,5 +1,5 @@
 Spree::Order.class_eval do
-  has_many :bookkeeping_documents, as: :printable, dependent: :destroy
+  has_many :bookkeeping_documents, as: :printable, dependent: :destroy, inverse_of: :printable
   has_one :invoice, -> { where(template: 'invoice') },
           class_name: 'Spree::BookkeepingDocument',
           as: :printable
