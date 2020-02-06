@@ -23,14 +23,15 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_runtime_dependency 'prawn-rails', '~> 0.1.1'
-  s.add_runtime_dependency 'spree_core', '~> 3.1.0.beta'
+  s.add_runtime_dependency 'spree_core', '>= 3.1.0.beta', '< 4.0'
+  s.add_runtime_dependency 'spree_extension'
+  s.add_runtime_dependency 'listen', '~> 3.1.5'
+  s.add_runtime_dependency 'rake', '< 11.0'
 
   s.add_development_dependency 'capybara', '~> 2.4.4'
   s.add_development_dependency 'poltergeist', '~> 1.5'
-  s.add_development_dependency 'factory_girl', '~> 4.4'
   s.add_development_dependency 'rspec-rails', '~> 3.3.0'
   s.add_development_dependency 'simplecov', '~> 0.10.0'
-  s.add_development_dependency 'sqlite3', '~> 1.3.10'
   s.add_development_dependency 'database_cleaner', '~> 1.4.0'
   s.add_development_dependency 'coffee-rails', '~> 4.0.0'
   s.add_development_dependency 'sass-rails', '~> 5.0.0'
@@ -39,4 +40,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'guard-rspec', '>= 4.2.0'
   s.add_development_dependency 'pry-rails', '>= 0.3.0'
   s.add_development_dependency 'rubocop', '>= 0.24.1'
+  s.add_development_dependency 'factory_bot', '~> 4.10.0'
+  s.add_development_dependency 'sqlite3', '~> 1.3.7'
+  s.add_development_dependency 'puma'
 end
