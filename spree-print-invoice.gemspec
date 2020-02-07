@@ -24,9 +24,6 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'prawn-rails', '~> 0.1.1'
   s.add_runtime_dependency 'spree_core', '>= 3.1.0.beta', '< 4.0'
-  s.add_runtime_dependency 'spree_extension'
-  s.add_runtime_dependency 'listen', '~> 3.1.5'
-  s.add_runtime_dependency 'rake', '< 11.0'
 
   s.add_development_dependency 'capybara', '~> 2.4.4'
   s.add_development_dependency 'poltergeist', '~> 1.5'
@@ -43,4 +40,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'factory_bot', '~> 4.10.0'
   s.add_development_dependency 'sqlite3', '~> 1.3.7'
   s.add_development_dependency 'puma'
+  s.add_development_dependency 'listen', '~> 3.1.5'
+  s.add_development_dependency 'rake', '< 11.0'
 end
